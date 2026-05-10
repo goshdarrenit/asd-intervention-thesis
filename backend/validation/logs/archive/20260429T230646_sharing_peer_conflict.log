@@ -1,0 +1,16 @@
+{
+  "scenario_id": "sharing_peer_conflict",
+  "persona_ratings": [
+    {
+      "persona": "low_verbal",
+      "score": 4,
+      "justification": "Good",
+      "dimension_scores": null
+    }
+  ],
+  "mean_score": 4.0,
+  "safety_flags": [],
+  "recommendation": "approve",
+  "session_results": null,
+  "adaptation_summary": null
+}

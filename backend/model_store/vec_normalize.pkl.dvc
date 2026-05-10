@@ -1,0 +1,5 @@
+outs:
+- md5: cf24cba37eeaf2fa1eba74e5f1fbe53d
+  size: 5266
+  hash: md5
+  path: vec_normalize.pkl

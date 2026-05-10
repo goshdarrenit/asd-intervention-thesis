@@ -1,0 +1,4 @@
+comparison,U_statistic,p_value,cohens_d,effect_size,significant_p05
+PPO vs Rule-Based Adaptive,1820.5,4.256326426149678e-05,0.8569,large,True
+PPO vs Fixed Curriculum,1600.0,0.007989605093604355,0.5005,medium,True
+PPO vs Random,1936.0,1.1465436792362315e-06,1.0456,large,True

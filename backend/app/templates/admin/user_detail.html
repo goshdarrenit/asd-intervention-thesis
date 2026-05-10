@@ -1,0 +1,285 @@
+{% extends "admin/base.html" %}
+
+{% block title %}User {{ user.email or user.user_id }}{% endblock %}
+{% block page_title %}User Detail{% endblock %}
+
+{% block head %}
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+{% endblock %}
+
+{% block content %}
+<!-- Profile summary -->
+<div class="profile-header card mb-4">
+  <div class="profile-info">
+    <div>
+      <h2>{{ user.email or "Anonymous" }}</h2>
+      <p class="text-muted">ID: {{ user.user_id }}</p>
+    </div>
+    <div class="profile-meta">
+      <span class="badge badge-sev-{{ user.severity_level }}">Severity Level {{ user.severity_level }}</span>
+      <span class="meta-item">Age: {{ user.age }}</span>
+      <span class="meta-item">Joined: {{ user.created_at.strftime('%Y-%m-%d') if user.created_at }}</span>
+    </div>
+  </div>
+  {% if profile %}
+  <div class="stats-grid mini mt-3">
+    <div class="stat-card">
+      <div class="stat-value">{{ profile.scenarios_completed }}</div>
+      <div class="stat-label">Scenarios</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-value">{{ (profile.overall_success_rate * 100) | round(1) }}%</div>
+      <div class="stat-label">Success Rate</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-value">{{ profile.current_difficulty }}</div>
+      <div class="stat-label">Current Difficulty</div>
+    </div>
+  </div>
+  {% endif %}
+
+  <div class="mt-3">
+    <form method="post" action="/admin/users/{{ user.user_id }}/disable"
+          onsubmit="return confirm('Disable this user? They will be unable to log in.')">
+      <button type="submit" class="btn btn-danger btn-sm">Disable Account</button>
+    </form>
+  </div>
+</div>
+
+<!-- Charts row -->
+{% if chart_labels %}
+<div class="charts-row">
+  <div class="chart-card card">
+    <div class="card-header">Success Rate per Scenario</div>
+    <canvas id="successChart" height="200"></canvas>
+  </div>
+  <div class="chart-card card">
+    <div class="card-header">Difficulty Progression</div>
+    <canvas id="difficultyChart" height="200"></canvas>
+  </div>
+  <div class="chart-card card">
+    <div class="card-header">Emotion Trends</div>
+    <canvas id="emotionChart" height="200"></canvas>
+  </div>
+</div>
+
+<script>
+  const labels = {{ chart_labels | tojson }};
+
+  new Chart(document.getElementById('successChart'), {
+    type: 'line',
+    data: {
+      labels,
+      datasets: [{
+        label: 'Success (1=yes, 0=no)',
+        data: {{ chart_success | tojson }},
+        borderColor: '#4ade80',
+        backgroundColor: 'rgba(74,222,128,0.1)',
+        tension: 0.3,
+        fill: true,
+      }]
+    },
+    options: { scales: { y: { min: 0, max: 1 } }, plugins: { legend: { display: false } } }
+  });
+
+  new Chart(document.getElementById('difficultyChart'), {
+    type: 'line',
+    data: {
+      labels,
+      datasets: [{
+        label: 'Difficulty',
+        data: {{ chart_difficulty | tojson }},
+        borderColor: '#60a5fa',
+        backgroundColor: 'rgba(96,165,250,0.1)',
+        tension: 0.3,
+        fill: true,
+      }]
+    },
+    options: { scales: { y: { min: 1, max: 5 } }, plugins: { legend: { display: false } } }
+  });
+
+  new Chart(document.getElementById('emotionChart'), {
+    type: 'line',
+    data: {
+      labels,
+      datasets: [
+        {
+          label: 'Frustration',
+          data: {{ chart_frustration | tojson }},
+          borderColor: '#f87171',
+          tension: 0.3,
+        },
+        {
+          label: 'Engagement',
+          data: {{ chart_engagement | tojson }},
+          borderColor: '#34d399',
+          tension: 0.3,
+        },
+        {
+          label: 'Confidence',
+          data: {{ chart_confidence | tojson }},
+          borderColor: '#a78bfa',
+          tension: 0.3,
+        },
+      ]
+    },
+    options: { scales: { y: { min: 0, max: 1 } } }
+  });
+</script>
+{% else %}
+<div class="card mb-4">
+  <div class="card-body text-muted">No scenario data yet.</div>
+</div>
+{% endif %}
+
+<!-- RL Summary section -->
+<div class="card mb-4">
+  <div class="card-header">RL Policy Summary</div>
+  <div class="card-body">
+
+    <!-- Stat pills row -->
+    <div class="rl-stats-row mb-4">
+      <div class="rl-stat">
+        <div class="rl-stat-value">{{ rl_total_reward }}</div>
+        <div class="rl-stat-label">Cumulative Reward</div>
+      </div>
+      <div class="rl-stat">
+        <div class="rl-stat-value">{{ rl_model_count }}</div>
+        <div class="rl-stat-label">RL Model Decisions</div>
+      </div>
+      <div class="rl-stat">
+        <div class="rl-stat-value">{{ rl_fallback_count }}</div>
+        <div class="rl-stat-label">Fallback Decisions</div>
+      </div>
+      {% for label in rl_reinf_labels %}
+      <div class="rl-stat">
+        <div class="rl-stat-value">{{ rl_reinf_counts[loop.index0] }}</div>
+        <div class="rl-stat-label">{{ label }} Reinforcement</div>
+      </div>
+      {% endfor %}
+    </div>
+
+    <!-- Charts row -->
+    {% set has_rl_data = rl_type_counts | sum > 0 %}
+    {% if has_rl_data %}
+    <div class="charts-row">
+      <div class="chart-card card">
+        <div class="card-header">Scenario Type Distribution</div>
+        <canvas id="typeDistChart" height="220"></canvas>
+      </div>
+      <div class="chart-card card">
+        <div class="card-header">Avg Reward by Scenario Type</div>
+        <canvas id="rewardByTypeChart" height="220"></canvas>
+      </div>
+    </div>
+
+    <script>
+      const scenarioColors = [
+        'rgba(59,130,246,0.8)',   /* sharing           — blue   */
+        'rgba(139,92,246,0.8)',   /* patience          — purple */
+        'rgba(249,115,22,0.8)',   /* emotion_recognition — orange */
+        'rgba(20,184,166,0.8)',   /* turn_taking       — teal   */
+        'rgba(239,68,68,0.8)',    /* conflict_resolution — red   */
+      ];
+      const scenarioBorders = [
+        '#3b82f6','#8b5cf6','#f97316','#14b8a6','#ef4444',
+      ];
+
+      new Chart(document.getElementById('typeDistChart'), {
+        type: 'doughnut',
+        data: {
+          labels: {{ rl_type_labels | tojson }},
+          datasets: [{
+            data: {{ rl_type_counts | tojson }},
+            backgroundColor: scenarioColors,
+            borderColor: scenarioBorders,
+            borderWidth: 2,
+          }]
+        },
+        options: {
+          plugins: {
+            legend: { position: 'right', labels: { font: { size: 12 } } }
+          },
+          cutout: '55%',
+        }
+      });
+
+      new Chart(document.getElementById('rewardByTypeChart'), {
+        type: 'bar',
+        data: {
+          labels: {{ rl_type_labels | tojson }},
+          datasets: [{
+            label: 'Avg Reward',
+            data: {{ rl_type_rewards | tojson }},
+            backgroundColor: scenarioColors,
+            borderColor: scenarioBorders,
+            borderWidth: 2,
+            borderRadius: 4,
+          }]
+        },
+        options: {
+          indexAxis: 'y',
+          scales: {
+            x: { min: 0, max: 1, title: { display: true, text: 'Avg Reward (0–1)' } }
+          },
+          plugins: { legend: { display: false } }
+        }
+      });
+    </script>
+    {% else %}
+    <p class="text-muted">No RL data yet — scenario results will appear here after the first session.</p>
+    {% endif %}
+
+  </div>
+</div>
+
+<!-- Session history table -->
+<div class="card">
+  <div class="card-header">Session History (last 20)</div>
+  <div class="table-wrapper">
+    <table class="data-table">
+      <thead>
+        <tr>
+          <th>Started</th>
+          <th>Platform</th>
+          <th>Duration</th>
+          <th>Scenarios</th>
+          <th>Total Reward</th>
+          <th>Avg Frustration</th>
+          <th>Ended</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for s in sessions %}
+        {% set duration_mins = ((s.ended_at - s.started_at).total_seconds() / 60) | int if s.ended_at else none %}
+        <tr>
+          <td>{{ s.started_at.strftime('%Y-%m-%d %H:%M') }}</td>
+          <td>{{ (s.platform or 'Unknown') | title }}</td>
+          <td class="text-muted">{{ duration_mins ~ ' min' if duration_mins is not none else '—' }}</td>
+          <td>{{ s.scenarios_completed }}</td>
+          <td>{{ "%.3f" | format(s.total_reward or 0) }}</td>
+          <td>{{ "%.2f" | format(s.average_frustration or 0) }}</td>
+          <td>
+            {% if s.ended_reason == 'intervention' %}
+              <span class="badge badge-ended-intervention">Intervention</span>
+            {% elif s.ended_reason == 'timeout' %}
+              <span class="badge badge-ended-timeout">Timeout</span>
+            {% elif s.ended_reason == 'user_quit' %}
+              <span class="badge badge-ended-quit">User Quit</span>
+            {% elif s.ended_at %}
+              <span class="badge badge-ended-completed">Completed</span>
+            {% else %}
+              <span class="badge badge-ended-quit">In Progress</span>
+            {% endif %}
+          </td>
+          <td><a href="/admin/sessions/{{ s.session_id }}" class="btn btn-outline btn-sm">View RL&nbsp;&rarr;</a></td>
+        </tr>
+        {% else %}
+        <tr><td colspan="8" class="empty-row">No sessions yet.</td></tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</div>
+{% endblock %}

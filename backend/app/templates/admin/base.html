@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{% block title %}Admin{% endblock %} — ASD Intervention</title>
+  <link rel="stylesheet" href="/static/admin.css" />
+  {% block head %}{% endblock %}
+</head>
+<body>
+  <div class="layout">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <div class="sidebar-logo">
+        <span class="logo-icon">🧠</span>
+        <span class="logo-text">ASD Research</span>
+      </div>
+      <nav class="sidebar-nav">
+        <a href="/admin/dashboard" class="nav-item {% if request.url.path == '/admin/dashboard' %}active{% endif %}">
+          <span class="nav-icon">📊</span> Dashboard
+        </a>
+        <a href="/admin/users" class="nav-item {% if '/admin/users' in request.url.path %}active{% endif %}">
+          <span class="nav-icon">👥</span> Users
+        </a>
+        <a href="/admin/export/csv" class="nav-item">
+          <span class="nav-icon">📥</span> Export CSV
+        </a>
+      </nav>
+      <div class="sidebar-footer">
+        {% if admin %}
+        <span class="admin-email">{{ admin.email }}</span>
+        {% endif %}
+        <a href="/admin/logout" class="logout-link">Sign out</a>
+      </div>
+    </aside>
+
+    <!-- Main content -->
+    <main class="main-content">
+      <header class="topbar">
+        <h1 class="page-title">{% block page_title %}{% endblock %}</h1>
+        <div class="topbar-actions">
+          <button type="button" class="btn btn-secondary" onclick="window.location.reload()">
+            Refresh
+          </button>
+        </div>
+      </header>
+      <div class="content-body">
+        {% block content %}{% endblock %}
+      </div>
+    </main>
+  </div>
+</body>
+</html>

@@ -1,0 +1,5 @@
+agent,action_entropy,scenario_entropy,action_entropy_pct,scenario_entropy_pct
+PPO (RL Agent),1.843,1.635,23.6,70.4
+Rule-Based Adaptive,3.751,2.322,48.0,100.0
+Fixed Curriculum,4.322,2.322,55.3,100.0
+Random,7.636,2.314,97.7,99.7

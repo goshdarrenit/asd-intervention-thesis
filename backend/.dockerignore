@@ -1,0 +1,15 @@
+# Never copy local virtualenv — the image builds its own with uv sync
+.venv
+
+# Python cache
+__pycache__
+*.pyc
+*.pyo
+.pytest_cache
+
+# Local dev / editor artifacts
+.env
+.env.*
+*.egg-info
+.mypy_cache
+.ruff_cache

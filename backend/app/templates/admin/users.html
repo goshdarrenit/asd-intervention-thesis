@@ -1,0 +1,75 @@
+{% extends "admin/base.html" %}
+
+{% block title %}Users{% endblock %}
+{% block page_title %}Users ({{ total }}){% endblock %}
+
+{% block content %}
+<div class="card">
+  <div class="card-header">
+    All Registered Users
+    <a href="/admin/export/csv" class="btn btn-sm btn-secondary float-right">Export CSV</a>
+  </div>
+  <div class="table-wrapper">
+    <table class="data-table">
+      <thead>
+        <tr>
+          <th>Email</th>
+          <th>Age</th>
+          <th>Severity</th>
+          <th>Scenarios</th>
+          <th>Success Rate</th>
+          <th>Last Session</th>
+          <th>Registered</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for u in users %}
+        <tr>
+          <td><a href="/admin/users/{{ u.user_id }}">{{ u.email }}</a></td>
+          <td>{{ u.age }}</td>
+          <td>
+            <span class="badge badge-sev-{{ u.severity }}">Level {{ u.severity }}</span>
+          </td>
+          <td>{{ u.scenarios_completed }}</td>
+          <td>
+            <span class="success-bar">
+              <span class="success-fill" style="width: {{ u.success_rate }}%"></span>
+            </span>
+            {{ u.success_rate }}%
+          </td>
+          <td>
+            {% if u.last_session %}
+              {{ u.last_session.strftime('%Y-%m-%d') }}
+            {% else %}
+              —
+            {% endif %}
+          </td>
+          <td>{{ u.created_at.strftime('%Y-%m-%d') }}</td>
+          <td>
+            <a href="/admin/users/{{ u.user_id }}" class="btn btn-sm btn-outline">View</a>
+          </td>
+        </tr>
+        {% else %}
+        <tr>
+          <td colspan="8" class="empty-row">No users registered yet.</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Pagination -->
+  {% if total_pages > 1 %}
+  <div class="pagination">
+    {% if page > 1 %}
+    <a href="?page={{ page - 1 }}" class="btn btn-sm btn-outline">← Prev</a>
+    {% endif %}
+    <span>Page {{ page }} of {{ total_pages }}</span>
+    {% if page < total_pages %}
+    <a href="?page={{ page + 1 }}" class="btn btn-sm btn-outline">Next -></a>
+    {% endif %}
+  </div>
+  {% endif %}
+</div>
+{% endblock %}

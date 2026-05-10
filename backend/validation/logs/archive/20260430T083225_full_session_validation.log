@@ -1,0 +1,785 @@
+{
+  "scenario_id": "full_session_validation",
+  "persona_ratings": [
+    {
+      "persona": "low_verbal",
+      "score": 5,
+      "justification": "emotion_accuracy=5/5 (0 inference mismatches); difficulty_progression=5/5; reinforcement=5/5 (0 mode mismatches); force_end=5/5 (force_ended=True, max_streak=3)",
+      "dimension_scores": {
+        "emotion_accuracy": 5,
+        "difficulty_progression": 5,
+        "reinforcement_appropriateness": 5,
+        "force_end_correctness": 5
+      }
+    },
+    {
+      "persona": "high_anxiety",
+      "score": 5,
+      "justification": "emotion_accuracy=5/5 (0 inference mismatches); difficulty_progression=5/5; reinforcement=5/5 (0 mode mismatches); force_end=5/5 (force_ended=False, max_streak=1)",
+      "dimension_scores": {
+        "emotion_accuracy": 5,
+        "difficulty_progression": 5,
+        "reinforcement_appropriateness": 5,
+        "force_end_correctness": 5
+      }
+    },
+    {
+      "persona": "rigid_routine",
+      "score": 5,
+      "justification": "emotion_accuracy=5/5 (0 inference mismatches); difficulty_progression=5/5; reinforcement=5/5 (0 mode mismatches); force_end=5/5 (force_ended=False, max_streak=1)",
+      "dimension_scores": {
+        "emotion_accuracy": 5,
+        "difficulty_progression": 5,
+        "reinforcement_appropriateness": 5,
+        "force_end_correctness": 5
+      }
+    },
+    {
+      "persona": "high_masking",
+      "score": 5,
+      "justification": "emotion_accuracy=5/5 (0 inference mismatches); difficulty_progression=5/5; reinforcement=5/5 (0 mode mismatches); force_end=5/5 (force_ended=False, max_streak=0)",
+      "dimension_scores": {
+        "emotion_accuracy": 5,
+        "difficulty_progression": 5,
+        "reinforcement_appropriateness": 5,
+        "force_end_correctness": 5
+      }
+    },
+    {
+      "persona": "sensory_sensitive",
+      "score": 5,
+      "justification": "emotion_accuracy=5/5 (0 inference mismatches); difficulty_progression=5/5; reinforcement=5/5 (0 mode mismatches); force_end=5/5 (force_ended=False, max_streak=0)",
+      "dimension_scores": {
+        "emotion_accuracy": 5,
+        "difficulty_progression": 5,
+        "reinforcement_appropriateness": 5,
+        "force_end_correctness": 5
+      }
+    }
+  ],
+  "mean_score": 5.0,
+  "safety_flags": [],
+  "recommendation": "approve",
+  "session_results": [
+    {
+      "persona": "low_verbal",
+      "user_id": "e70e8315-c363-48dd-8c6e-4253f36af37e",
+      "session_id": "1892e1be-bc80-4ebb-bc80-16d7e37aee33",
+      "scenarios": [
+        {
+          "scenario_number": 1,
+          "scenario_type": "sharing",
+          "difficulty": 1,
+          "complexity": "high",
+          "reinforcement_mode": "corrective",
+          "telemetry": {
+            "success": false,
+            "completion_time_ms": 60000,
+            "pause_count": 7,
+            "retry_count": 4,
+            "hesitation_pattern": 3000,
+            "quit_attempts": 0,
+            "action_counts": {},
+            "decision_timestamps_ms": []
+          },
+          "system_response": {
+            "emotions": {
+              "frustration": 0.6,
+              "engagement": 0.75,
+              "confidence": 0.0
+            },
+            "reward": 0.12,
+            "updated_difficulty": 1,
+            "message": "Nice try! Next time, think about how your friend might feel.",
+            "force_ended": false
+          }
+        },
+        {
+          "scenario_number": 2,
+          "scenario_type": "conflict_resolution",
+          "difficulty": 1,
+          "complexity": "high",
+          "reinforcement_mode": "corrective",
+          "telemetry": {
+            "success": false,
+            "completion_time_ms": 65000,
+            "pause_count": 7,
+            "retry_count": 3,
+            "hesitation_pattern": 2500,
+            "quit_attempts": 0,
+            "action_counts": {},
+            "decision_timestamps_ms": []
+          },
+          "system_response": {
+            "emotions": {
+              "frustration": 0.6,
+              "engagement": 0.6923076923076924,
+              "confidence": 0.0
+            },
+            "reward": 0.12,
+            "updated_difficulty": 1,
+            "message": "Nice try! Next time, think about how your friend might feel.",
+            "force_ended": false
+          }
+        },
+        {
+          "scenario_number": 3,
+          "scenario_type": "emotion_recognition",
+          "difficulty": 1,
+          "complexity": "medium",
+          "reinforcement_mode": "neutral",
+          "telemetry": {
+            "success": false,
+            "completion_time_ms": 60000,
+            "pause_count": 7,
+            "retry_count": 4,
+            "hesitation_pattern": 3000,
+            "quit_attempts": 0,
+            "action_counts": {},
+            "decision_timestamps_ms": []
+          },
+          "system_response": {
+            "emotions": {
+              "frustration": 0.6,
+              "engagement": 0.75,
+              "confidence": 0.0
+            },
+            "reward": 0.12,
+            "updated_difficulty": 1,
+            "message": "Nice try! Next time, think about how your friend might feel.",
+            "force_ended": true
+          }
+        }
+      ],
+      "force_ended": true,
+      "final_metrics": {
+        "already_ended": true
+      }
+    },
+    {
+      "persona": "high_anxiety",
+      "user_id": "065b17c0-3c4b-4697-9e02-01c2cc60353e",
+      "session_id": "a782c166-6396-4c7e-85ca-d38d976a3930",
+      "scenarios": [
+        {
+          "scenario_number": 1,
+          "scenario_type": "patience",
+          "difficulty": 1,
+          "complexity": "high",
+          "reinforcement_mode": "neutral",
+          "telemetry": {
+            "success": true,
+            "completion_time_ms": 45000,
+            "pause_count": 7,
+            "retry_count": 2,
+            "hesitation_pattern": 3000,
+            "quit_attempts": 0,
+            "action_counts": {},
+            "decision_timestamps_ms": []
+          },
+          "system_response": {
+            "emotions": {
+              "frustration": 0.5,
+              "engagement": 1.0,
+              "confidence": 0.0
+            },
+            "reward": 0.85,
+            "updated_difficulty": 1,
+            "message": "Excellent work! You helped your friend feel happy!",
+            "force_ended": false
+          }
+        },
+        {
+          "scenario_number": 2,
+          "scenario_type": "conflict_resolution",
+          "difficulty": 1,
+          "complexity": "high",
+          "reinforcement_mode": "neutral",
+          "telemetry": {
+            "success": false,
+            "completion_time_ms": 60000,
+            "pause_count": 8,
+            "retry_count": 0,
+            "hesitation_pattern": 3000,
+            "quit_attempts": 0,
+            "action_counts": {},
+            "decision_timestamps_ms": []
+          },
+          "system_response": {
+            "emotions": {
+              "frustration": 0.3,
+              "engagement": 0.75,
+              "confidence": 0.0
+            },
+            "reward": 0.21,
+            "updated_difficulty": 1,
+            "message": "Nice try! Next time, think about how your friend might feel.",
+            "force_ended": false
+          }
+        },
+        {
+          "scenario_number": 3,
+          "scenario_type": "sharing",
+          "difficulty": 1,
+          "complexity": "high",
+          "reinforcement_mode": "neutral",
+          "telemetry": {
+            "success": true,
+            "completion_time_ms": 45000,
+            "pause_count": 7,
+            "retry_count": 1,
+            "hesitation_pattern": 3000,
+            "quit_attempts": 0,
+            "action_counts": {},
+            "decision_timestamps_ms": []
+          },
+          "system_response": {
+            "emotions": {
+              "frustration": 0.39999999999999997,
+              "engagement": 1.0,
+              "confidence": 0.0
+            },
+            "reward": 0.88,
+            "updated_difficulty": 1,
+            "message": "Excellent work! You helped your friend feel happy!",
+            "force_ended": false
+          }
+        },
+        {
+          "scenario_number": 4,
+          "scenario_type": "emotion_recognition",
+          "difficulty": 1,
+          "complexity": "high",
+          "reinforcement_mode": "neutral",
+          "telemetry": {
+            "success": true,
+            "completion_time_ms": 45000,
+            "pause_count": 7,
+            "retry_count": 2,
+            "hesitation_pattern": 3000,
+            "quit_attempts": 0,
+            "action_counts": {},
+            "decision_timestamps_ms": []
+          },
+          "system_response": {
+            "emotions": {
+              "frustration": 0.5,
+              "engagement": 1.0,
+              "confidence": 0.0
+            },
+            "reward": 0.85,
+            "updated_difficulty": 1,
+            "message": "Excellent work! You helped your friend feel happy!",
+            "force_ended": false
+          }
+        },
+        {
+          "scenario_number": 5,
+          "scenario_type": "turn_taking",
+          "difficulty": 1,
+          "complexity": "high",
+          "reinforcement_mode": "neutral",
+          "telemetry": {
+            "success": true,
+            "completion_time_ms": 45000,
+            "pause_count": 7,
+            "retry_count": 2,
+            "hesitation_pattern": 3000,
+            "quit_attempts": 0,
+            "action_counts": {},
+            "decision_timestamps_ms": []
+          },
+          "system_response": {
+            "emotions": {
+              "frustration": 0.5,
+              "engagement": 1.0,
+              "confidence": 0.0
+            },
+            "reward": 0.85,
+            "updated_difficulty": 1,
+            "message": "Excellent work! You helped your friend feel happy!",
+            "force_ended": false
+          }
+        }
+      ],
+      "force_ended": false,
+      "final_metrics": {
+        "session_id": "a782c166-6396-4c7e-85ca-d38d976a3930",
+        "ended_at": "2026-04-30T07:55:14.789414",
+        "scenarios_completed": 5,
+        "total_reward": 3.64,
+        "average_frustration": 0.44000000000000006,
+        "message": "Session ended successfully"
+      }
+    },
+    {
+      "persona": "rigid_routine",
+      "user_id": "5aba4fd5-8930-4a9a-b8ee-9add96e73ec7",
+      "session_id": "216249da-4227-480a-b458-d71be63061ea",
+      "scenarios": [
+        {
+          "scenario_number": 1,
+          "scenario_type": "conflict_resolution",
+          "difficulty": 1,
+          "complexity": "high",
+          "reinforcement_mode": "neutral",
+          "telemetry": {
+            "success": false,
+            "completion_time_ms": 60000,
+            "pause_count": 5,
+            "retry_count": 2,
+            "hesitation_pattern": 3000,
+            "quit_attempts": 0,
+            "action_counts": {},
+            "decision_timestamps_ms": []
+          },
+          "system_response": {
+            "emotions": {
+              "frustration": 0.5,
+              "engagement": 0.75,
+              "confidence": 0.0
+            },
+            "reward": 0.15,
+            "updated_difficulty": 1,
+            "message": "Nice try! Next time, think about how your friend might feel.",
+            "force_ended": false
+          }
+        },
+        {
+          "scenario_number": 2,
+          "scenario_type": "sharing",
+          "difficulty": 1,
+          "complexity": "medium",
+          "reinforcement_mode": "neutral",
+          "telemetry": {
+            "success": true,
+            "completion_time_ms": 45000,
+            "pause_count": 5,
+            "retry_count": 2,
+            "hesitation_pattern": 3000,
+            "quit_attempts": 0,
+            "action_counts": {},
+            "decision_timestamps_ms": []
+          },
+          "system_response": {
+            "emotions": {
+              "frustration": 0.5,
+              "engagement": 1.0,
+              "confidence": 0.0
+            },
+            "reward": 0.85,
+            "updated_difficulty": 1,
+            "message": "Excellent work! You helped your friend feel happy!",
+            "force_ended": false
+          }
+        },
+        {
+          "scenario_number": 3,
+          "scenario_type": "emotion_recognition",
+          "difficulty": 1,
+          "complexity": "high",
+          "reinforcement_mode": "neutral",
+          "telemetry": {
+            "success": true,
+            "completion_time_ms": 45000,
+            "pause_count": 4,
+            "retry_count": 2,
+            "hesitation_pattern": 3000,
+            "quit_attempts": 0,
+            "action_counts": {},
+            "decision_timestamps_ms": []
+          },
+          "system_response": {
+            "emotions": {
+              "frustration": 0.5,
+              "engagement": 1.0,
+              "confidence": 0.0
+            },
+            "reward": 0.85,
+            "updated_difficulty": 1,
+            "message": "Excellent work! You helped your friend feel happy!",
+            "force_ended": false
+          }
+        },
+        {
+          "scenario_number": 4,
+          "scenario_type": "patience",
+          "difficulty": 1,
+          "complexity": "high",
+          "reinforcement_mode": "neutral",
+          "telemetry": {
+            "success": true,
+            "completion_time_ms": 45000,
+            "pause_count": 7,
+            "retry_count": 2,
+            "hesitation_pattern": 3000,
+            "quit_attempts": 0,
+            "action_counts": {},
+            "decision_timestamps_ms": []
+          },
+          "system_response": {
+            "emotions": {
+              "frustration": 0.5,
+              "engagement": 1.0,
+              "confidence": 0.0
+            },
+            "reward": 0.85,
+            "updated_difficulty": 1,
+            "message": "Excellent work! You helped your friend feel happy!",
+            "force_ended": false
+          }
+        },
+        {
+          "scenario_number": 5,
+          "scenario_type": "turn_taking",
+          "difficulty": 1,
+          "complexity": "high",
+          "reinforcement_mode": "neutral",
+          "telemetry": {
+            "success": true,
+            "completion_time_ms": 60000,
+            "pause_count": 4,
+            "retry_count": 2,
+            "hesitation_pattern": 3000,
+            "quit_attempts": 0,
+            "action_counts": {},
+            "decision_timestamps_ms": []
+          },
+          "system_response": {
+            "emotions": {
+              "frustration": 0.5,
+              "engagement": 0.75,
+              "confidence": 0.0
+            },
+            "reward": 0.85,
+            "updated_difficulty": 1,
+            "message": "Excellent work! You helped your friend feel happy!",
+            "force_ended": false
+          }
+        }
+      ],
+      "force_ended": false,
+      "final_metrics": {
+        "session_id": "216249da-4227-480a-b458-d71be63061ea",
+        "ended_at": "2026-04-30T08:05:34.327457",
+        "scenarios_completed": 5,
+        "total_reward": 3.55,
+        "average_frustration": 0.5,
+        "message": "Session ended successfully"
+      }
+    },
+    {
+      "persona": "high_masking",
+      "user_id": "87bd094e-d6ae-426a-bbeb-7ba86e8c87e3",
+      "session_id": "19d429e9-c697-4192-ad2d-91f924e2db03",
+      "scenarios": [
+        {
+          "scenario_number": 1,
+          "scenario_type": "sharing",
+          "difficulty": 5,
+          "complexity": "high",
+          "reinforcement_mode": "neutral",
+          "telemetry": {
+            "success": true,
+            "completion_time_ms": 65000,
+            "pause_count": 7,
+            "retry_count": 2,
+            "hesitation_pattern": 3000,
+            "quit_attempts": 0,
+            "action_counts": {},
+            "decision_timestamps_ms": []
+          },
+          "system_response": {
+            "emotions": {
+              "frustration": 0.5,
+              "engagement": 0.6923076923076924,
+              "confidence": 0.0
+            },
+            "reward": 0.85,
+            "updated_difficulty": 5,
+            "message": "Good job! Everyone had a great time.",
+            "force_ended": false
+          }
+        },
+        {
+          "scenario_number": 2,
+          "scenario_type": "conflict_resolution",
+          "difficulty": 5,
+          "complexity": "low",
+          "reinforcement_mode": "neutral",
+          "telemetry": {
+            "success": true,
+            "completion_time_ms": 45000,
+            "pause_count": 5,
+            "retry_count": 2,
+            "hesitation_pattern": 3000,
+            "quit_attempts": 0,
+            "action_counts": {},
+            "decision_timestamps_ms": []
+          },
+          "system_response": {
+            "emotions": {
+              "frustration": 0.5,
+              "engagement": 1.0,
+              "confidence": 0.0
+            },
+            "reward": 0.9,
+            "updated_difficulty": 5,
+            "message": "Excellent work! You helped your friend feel happy!",
+            "force_ended": false
+          }
+        },
+        {
+          "scenario_number": 3,
+          "scenario_type": "turn_taking",
+          "difficulty": 5,
+          "complexity": "high",
+          "reinforcement_mode": "neutral",
+          "telemetry": {
+            "success": true,
+            "completion_time_ms": 45000,
+            "pause_count": 7,
+            "retry_count": 2,
+            "hesitation_pattern": 3000,
+            "quit_attempts": 0,
+            "action_counts": {},
+            "decision_timestamps_ms": []
+          },
+          "system_response": {
+            "emotions": {
+              "frustration": 0.5,
+              "engagement": 1.0,
+              "confidence": 0.0
+            },
+            "reward": 0.9,
+            "updated_difficulty": 5,
+            "message": "Excellent work! You helped your friend feel happy!",
+            "force_ended": false
+          }
+        },
+        {
+          "scenario_number": 4,
+          "scenario_type": "emotion_recognition",
+          "difficulty": 5,
+          "complexity": "high",
+          "reinforcement_mode": "neutral",
+          "telemetry": {
+            "success": true,
+            "completion_time_ms": 45000,
+            "pause_count": 7,
+            "retry_count": 2,
+            "hesitation_pattern": 3000,
+            "quit_attempts": 0,
+            "action_counts": {},
+            "decision_timestamps_ms": []
+          },
+          "system_response": {
+            "emotions": {
+              "frustration": 0.5,
+              "engagement": 1.0,
+              "confidence": 0.0
+            },
+            "reward": 0.9,
+            "updated_difficulty": 5,
+            "message": "Excellent work! You helped your friend feel happy!",
+            "force_ended": false
+          }
+        },
+        {
+          "scenario_number": 5,
+          "scenario_type": "patience",
+          "difficulty": 5,
+          "complexity": "high",
+          "reinforcement_mode": "neutral",
+          "telemetry": {
+            "success": true,
+            "completion_time_ms": 75000,
+            "pause_count": 8,
+            "retry_count": 2,
+            "hesitation_pattern": 10000,
+            "quit_attempts": 0,
+            "action_counts": {},
+            "decision_timestamps_ms": []
+          },
+          "system_response": {
+            "emotions": {
+              "frustration": 0.5,
+              "engagement": 0.6,
+              "confidence": 0.0
+            },
+            "reward": 0.85,
+            "updated_difficulty": 5,
+            "message": "Good job! Everyone had a great time.",
+            "force_ended": false
+          }
+        }
+      ],
+      "force_ended": false,
+      "final_metrics": {
+        "session_id": "19d429e9-c697-4192-ad2d-91f924e2db03",
+        "ended_at": "2026-04-30T08:17:25.491666",
+        "scenarios_completed": 5,
+        "total_reward": 4.4,
+        "average_frustration": 0.5,
+        "message": "Session ended successfully"
+      }
+    },
+    {
+      "persona": "sensory_sensitive",
+      "user_id": "f74709d3-21c0-48c0-b343-de0e3ff2aa0b",
+      "session_id": "6998a86c-88b5-4dae-b3b8-bf36317e3d47",
+      "scenarios": [
+        {
+          "scenario_number": 1,
+          "scenario_type": "patience",
+          "difficulty": 1,
+          "complexity": "medium",
+          "reinforcement_mode": "corrective",
+          "telemetry": {
+            "success": true,
+            "completion_time_ms": 45000,
+            "pause_count": 2,
+            "retry_count": 3,
+            "hesitation_pattern": 1000,
+            "quit_attempts": 0,
+            "action_counts": {},
+            "decision_timestamps_ms": []
+          },
+          "system_response": {
+            "emotions": {
+              "frustration": 0.5,
+              "engagement": 1.0,
+              "confidence": 0.0
+            },
+            "reward": 0.85,
+            "updated_difficulty": 1,
+            "message": "Excellent work! You helped your friend feel happy!",
+            "force_ended": false
+          }
+        },
+        {
+          "scenario_number": 2,
+          "scenario_type": "sharing",
+          "difficulty": 1,
+          "complexity": "medium",
+          "reinforcement_mode": "neutral",
+          "telemetry": {
+            "success": true,
+            "completion_time_ms": 4500,
+            "pause_count": 2,
+            "retry_count": 1,
+            "hesitation_pattern": 750,
+            "quit_attempts": 0,
+            "action_counts": {},
+            "decision_timestamps_ms": []
+          },
+          "system_response": {
+            "emotions": {
+              "frustration": 0.3,
+              "engagement": 0.3,
+              "confidence": 0.32500000000000007
+            },
+            "reward": 1.0,
+            "updated_difficulty": 1,
+            "message": "Good job! Everyone had a great time.",
+            "force_ended": false
+          }
+        },
+        {
+          "scenario_number": 3,
+          "scenario_type": "emotion_recognition",
+          "difficulty": 1,
+          "complexity": "high",
+          "reinforcement_mode": "neutral",
+          "telemetry": {
+            "success": true,
+            "completion_time_ms": 35000,
+            "pause_count": 4,
+            "retry_count": 2,
+            "hesitation_pattern": 700,
+            "quit_attempts": 0,
+            "action_counts": {},
+            "decision_timestamps_ms": []
+          },
+          "system_response": {
+            "emotions": {
+              "frustration": 0.5,
+              "engagement": 1.0,
+              "confidence": 0.0
+            },
+            "reward": 0.85,
+            "updated_difficulty": 1,
+            "message": "Excellent work! You helped your friend feel happy!",
+            "force_ended": false
+          }
+        },
+        {
+          "scenario_number": 4,
+          "scenario_type": "turn_taking",
+          "difficulty": 1,
+          "complexity": "high",
+          "reinforcement_mode": "neutral",
+          "telemetry": {
+            "success": true,
+            "completion_time_ms": 45000,
+            "pause_count": 4,
+            "retry_count": 2,
+            "hesitation_pattern": 750,
+            "quit_attempts": 0,
+            "action_counts": {},
+            "decision_timestamps_ms": []
+          },
+          "system_response": {
+            "emotions": {
+              "frustration": 0.5,
+              "engagement": 1.0,
+              "confidence": 0.0
+            },
+            "reward": 0.85,
+            "updated_difficulty": 1,
+            "message": "Excellent work! You helped your friend feel happy!",
+            "force_ended": false
+          }
+        },
+        {
+          "scenario_number": 5,
+          "scenario_type": "conflict_resolution",
+          "difficulty": 2,
+          "complexity": "high",
+          "reinforcement_mode": "neutral",
+          "telemetry": {
+            "success": true,
+            "completion_time_ms": 65000,
+            "pause_count": 4,
+            "retry_count": 2,
+            "hesitation_pattern": 1000,
+            "quit_attempts": 0,
+            "action_counts": {},
+            "decision_timestamps_ms": []
+          },
+          "system_response": {
+            "emotions": {
+              "frustration": 0.5,
+              "engagement": 0.6923076923076924,
+              "confidence": 0.0
+            },
+            "reward": 0.85,
+            "updated_difficulty": 2,
+            "message": "Good job! Everyone had a great time.",
+            "force_ended": false
+          }
+        }
+      ],
+      "force_ended": false,
+      "final_metrics": {
+        "session_id": "6998a86c-88b5-4dae-b3b8-bf36317e3d47",
+        "ended_at": "2026-04-30T08:32:25.126050",
+        "scenarios_completed": 5,
+        "total_reward": 4.4,
+        "average_frustration": 0.45999999999999996,
+        "message": "Session ended successfully"
+      }
+    }
+  ],
+  "adaptation_summary": "Evaluated 5 persona sessions deterministically. Scenario types seen: ['conflict_resolution', 'emotion_recognition', 'patience', 'sharing', 'turn_taking']. low_verbal: 3 scenarios, diffs=[1, 1, 1], force-ended | high_anxiety: 5 scenarios, diffs=[1, 1, 1, 1, 1], completed | rigid_routine: 5 scenarios, diffs=[1, 1, 1, 1, 1], completed | high_masking: 5 scenarios, diffs=[5, 5, 5, 5, 5], completed | sensory_sensitive: 5 scenarios, diffs=[1, 1, 1, 1, 2], completed"
+}

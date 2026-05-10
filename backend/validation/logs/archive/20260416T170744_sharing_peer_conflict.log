@@ -1,0 +1,36 @@
+{
+  "scenario_id": "sharing_peer_conflict",
+  "persona_ratings": [
+    {
+      "persona": "low_verbal ASD (9-year-old child with limited verbal communication)",
+      "score": 4,
+      "justification": "The strategy allows the child to respond without becoming dysregulated. However, additional support might be needed if the peer continues to persistently request access."
+    },
+    {
+      "persona": "high_anxiety",
+      "score": 3,
+      "justification": "The strategy is helpful in managing anxiety but might need additional coping strategies for persistent requests."
+    },
+    {
+      "persona": "rigid_routine",
+      "score": 5,
+      "justification": "The strategy is very appropriate as it allows the persona to maintain control over the situation and avoid becoming dysregulated."
+    },
+    {
+      "persona": "high_masking",
+      "score": 4,
+      "justification": "The strategy is generally helpful but additional support or time might be needed for processing and responding if the peer persists in their request."
+    },
+    {
+      "persona": "sensory_sensitive",
+      "score": 4,
+      "justification": "The strategy is appropriate but persistent requests or handling of the toy by others could potentially increase distress level."
+    }
+  ],
+  "mean_score": 4.2,
+  "safety_flags": [
+    "Persistent peer requests may cause distress or confusion",
+    "High sensory sensitivity to potential increases in distress level"
+  ],
+  "recommendation": "revise"
+}

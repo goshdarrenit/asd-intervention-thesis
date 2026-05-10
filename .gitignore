@@ -1,0 +1,39 @@
+# Environment variables
+.env
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+*.egg-info/
+.pytest_cache/
+.ruff_cache/
+
+# Virtual environments
+.venv/
+venv/
+ENV/
+env/
+
+# Model store binaries (Git LFS will handle these later)
+*.zip
+*.pkl
+*.pth
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# DVC remote storage
+model_remote/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Validation framework logs (keep .gitkeep, ignore actual log files)
+backend/validation/logs/*.log

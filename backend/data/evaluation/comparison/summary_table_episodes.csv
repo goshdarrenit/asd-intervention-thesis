@@ -1,0 +1,5 @@
+agent,mean_episode_reward,ci_reward,mean_task_rate,ci_task_rate,mean_frustration,mean_engagement,mean_confidence
+PPO (RL Agent),13.7517,0.4946,0.647,0.0475,0.1734,0.8863,0.2817
+Rule-Based Adaptive,12.3287,0.4172,0.485,0.039,0.2212,0.9159,0.2291
+Fixed Curriculum,12.7876,0.5482,0.538,0.054,0.2143,0.9093,0.2466
+Random,11.9964,0.4154,0.464,0.0435,0.2344,0.8978,0.2239

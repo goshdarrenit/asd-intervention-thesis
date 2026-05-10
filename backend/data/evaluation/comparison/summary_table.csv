@@ -1,0 +1,5 @@
+agent,mean_reward,std_reward,task_rate,mean_frustration,mean_engagement,mean_confidence,n_rows
+Fixed Curriculum,0.6394,0.2532,0.538,0.2143,0.9093,0.2466,1000
+PPO (RL Agent),0.6876,0.2427,0.647,0.1734,0.8863,0.2817,1000
+Random,0.5998,0.2527,0.464,0.2344,0.8978,0.2239,1000
+Rule-Based Adaptive,0.6164,0.2516,0.485,0.2212,0.9159,0.2291,1000

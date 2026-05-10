@@ -1,0 +1,5 @@
+*.zip
+*.pkl
+checkpoints/
+best/
+tensorboard/

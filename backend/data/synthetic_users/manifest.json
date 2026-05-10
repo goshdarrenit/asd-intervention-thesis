@@ -1,0 +1,302 @@
+[
+  {
+    "id": "user_000",
+    "split": "train",
+    "age": 10.643736291335781,
+    "severity": 2
+  },
+  {
+    "id": "user_001",
+    "split": "train",
+    "age": 10.716385831661723,
+    "severity": 2
+  },
+  {
+    "id": "user_002",
+    "split": "train",
+    "age": 10.93656967962498,
+    "severity": 2
+  },
+  {
+    "id": "user_003",
+    "split": "train",
+    "age": 10.548526440512243,
+    "severity": 2
+  },
+  {
+    "id": "user_004",
+    "split": "train",
+    "age": 8.800326022362205,
+    "severity": 2
+  },
+  {
+    "id": "user_005",
+    "split": "train",
+    "age": 8.222758236209213,
+    "severity": 1
+  },
+  {
+    "id": "user_006",
+    "split": "train",
+    "age": 10.018883968095063,
+    "severity": 3
+  },
+  {
+    "id": "user_007",
+    "split": "train",
+    "age": 8.324870274181047,
+    "severity": 2
+  },
+  {
+    "id": "user_008",
+    "split": "train",
+    "age": 10.72154626501283,
+    "severity": 3
+  },
+  {
+    "id": "user_009",
+    "split": "train",
+    "age": 6.68718044121584,
+    "severity": 2
+  },
+  {
+    "id": "user_010",
+    "split": "train",
+    "age": 9.321476403947974,
+    "severity": 1
+  },
+  {
+    "id": "user_011",
+    "split": "train",
+    "age": 11.120418439608997,
+    "severity": 2
+  },
+  {
+    "id": "user_012",
+    "split": "train",
+    "age": 9.34219291404767,
+    "severity": 2
+  },
+  {
+    "id": "user_013",
+    "split": "train",
+    "age": 6.540287164653851,
+    "severity": 3
+  },
+  {
+    "id": "user_014",
+    "split": "train",
+    "age": 10.177922250466416,
+    "severity": 2
+  },
+  {
+    "id": "user_015",
+    "split": "train",
+    "age": 6.708035412723092,
+    "severity": 2
+  },
+  {
+    "id": "user_016",
+    "split": "train",
+    "age": 10.672505423794767,
+    "severity": 1
+  },
+  {
+    "id": "user_017",
+    "split": "train",
+    "age": 7.2141801887713815,
+    "severity": 3
+  },
+  {
+    "id": "user_018",
+    "split": "train",
+    "age": 10.316777735705621,
+    "severity": 2
+  },
+  {
+    "id": "user_019",
+    "split": "train",
+    "age": 6.249685043171355,
+    "severity": 2
+  },
+  {
+    "id": "user_020",
+    "split": "train",
+    "age": 7.023557811221316,
+    "severity": 1
+  },
+  {
+    "id": "user_021",
+    "split": "train",
+    "age": 8.893820621657401,
+    "severity": 3
+  },
+  {
+    "id": "user_022",
+    "split": "train",
+    "age": 9.430368314256452,
+    "severity": 2
+  },
+  {
+    "id": "user_023",
+    "split": "train",
+    "age": 10.957751545166147,
+    "severity": 2
+  },
+  {
+    "id": "user_024",
+    "split": "train",
+    "age": 7.68740270303405,
+    "severity": 1
+  },
+  {
+    "id": "user_025",
+    "split": "train",
+    "age": 6.224475337057079,
+    "severity": 2
+  },
+  {
+    "id": "user_026",
+    "split": "train",
+    "age": 11.71739637041847,
+    "severity": 2
+  },
+  {
+    "id": "user_027",
+    "split": "train",
+    "age": 8.610582360018228,
+    "severity": 1
+  },
+  {
+    "id": "user_028",
+    "split": "train",
+    "age": 9.113150162318695,
+    "severity": 2
+  },
+  {
+    "id": "user_029",
+    "split": "train",
+    "age": 7.574763095537188,
+    "severity": 1
+  },
+  {
+    "id": "user_030",
+    "split": "train",
+    "age": 7.075609848946435,
+    "severity": 2
+  },
+  {
+    "id": "user_031",
+    "split": "train",
+    "age": 9.004447117214054,
+    "severity": 2
+  },
+  {
+    "id": "user_032",
+    "split": "train",
+    "age": 6.730995027771186,
+    "severity": 1
+  },
+  {
+    "id": "user_033",
+    "split": "train",
+    "age": 10.43390402349325,
+    "severity": 2
+  },
+  {
+    "id": "user_034",
+    "split": "train",
+    "age": 8.9315042721092,
+    "severity": 2
+  },
+  {
+    "id": "user_035",
+    "split": "train",
+    "age": 9.803850670086511,
+    "severity": 2
+  },
+  {
+    "id": "user_036",
+    "split": "train",
+    "age": 11.598139329601267,
+    "severity": 3
+  },
+  {
+    "id": "user_037",
+    "split": "train",
+    "age": 10.780902529950971,
+    "severity": 3
+  },
+  {
+    "id": "user_038",
+    "split": "train",
+    "age": 8.475429415642083,
+    "severity": 1
+  },
+  {
+    "id": "user_039",
+    "split": "train",
+    "age": 7.419974177985487,
+    "severity": 2
+  },
+  {
+    "id": "user_040",
+    "split": "test",
+    "age": 6.87703946515619,
+    "severity": 1
+  },
+  {
+    "id": "user_041",
+    "split": "test",
+    "age": 6.921680371152352,
+    "severity": 3
+  },
+  {
+    "id": "user_042",
+    "split": "test",
+    "age": 9.546862896665827,
+    "severity": 2
+  },
+  {
+    "id": "user_043",
+    "split": "test",
+    "age": 6.260850372076751,
+    "severity": 3
+  },
+  {
+    "id": "user_044",
+    "split": "test",
+    "age": 6.295524719565564,
+    "severity": 1
+  },
+  {
+    "id": "user_045",
+    "split": "test",
+    "age": 6.594678849479253,
+    "severity": 2
+  },
+  {
+    "id": "user_046",
+    "split": "test",
+    "age": 9.854899655973286,
+    "severity": 2
+  },
+  {
+    "id": "user_047",
+    "split": "test",
+    "age": 8.31053697660212,
+    "severity": 3
+  },
+  {
+    "id": "user_048",
+    "split": "test",
+    "age": 7.395419643173242,
+    "severity": 2
+  },
+  {
+    "id": "user_049",
+    "split": "test",
+    "age": 11.693147560292042,
+    "severity": 2
+  }
+]

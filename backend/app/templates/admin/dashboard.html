@@ -1,0 +1,81 @@
+{% extends "admin/base.html" %}
+
+{% block title %}Dashboard{% endblock %}
+{% block page_title %}Dashboard{% endblock %}
+
+{% block content %}
+<div class="stats-grid">
+  <div class="stat-card">
+    <div class="stat-icon">👥</div>
+    <div class="stat-body">
+      <div class="stat-value">{{ total_users }}</div>
+      <div class="stat-label">Total Users</div>
+    </div>
+  </div>
+  <div class="stat-card">
+    <div class="stat-icon">🎮</div>
+    <div class="stat-body">
+      <div class="stat-value">{{ sessions_today }}</div>
+      <div class="stat-label">Sessions Today</div>
+    </div>
+  </div>
+  <div class="stat-card">
+    <div class="stat-icon">✅</div>
+    <div class="stat-body">
+      <div class="stat-value">{{ avg_success_rate }}%</div>
+      <div class="stat-label">Avg Success Rate</div>
+    </div>
+  </div>
+</div>
+
+<!-- RL System stats -->
+<div class="card mt-4">
+  <div class="card-header">RL System</div>
+  <div class="card-body">
+    <div class="stats-grid">
+      <div class="stat-card">
+        <div class="stat-icon">🤖</div>
+        <div class="stat-body">
+          <div class="stat-value" style="font-size:1.1rem;">
+            {% if rl_model_active %}
+              <span style="color:var(--success);">Active</span>
+            {% else %}
+              <span style="color:var(--warning);">Fallback</span>
+            {% endif %}
+          </div>
+          <div class="stat-label">PPO Model</div>
+        </div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-icon">🏆</div>
+        <div class="stat-body">
+          <div class="stat-value">{{ rl_total_reward }}</div>
+          <div class="stat-label">Total Reward Distributed</div>
+        </div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-icon">📈</div>
+        <div class="stat-body">
+          <div class="stat-value" style="font-size:1.1rem;">{{ rl_top_scenario }}</div>
+          <div class="stat-label">Top Scenario This Week</div>
+        </div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-icon">🛑</div>
+        <div class="stat-body">
+          <div class="stat-value">{{ rl_intervention_count }}</div>
+          <div class="stat-label">Safety Interventions</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="card mt-4">
+  <div class="card-header">Quick Actions</div>
+  <div class="card-body">
+    <a href="/admin/users" class="btn btn-secondary">View All Users</a>
+    <a href="/admin/export/csv" class="btn btn-secondary ml-2">Export CSV</a>
+  </div>
+</div>
+{% endblock %}

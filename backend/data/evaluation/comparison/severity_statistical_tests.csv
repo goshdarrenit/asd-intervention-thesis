@@ -1,0 +1,4 @@
+severity,ppo_mean,rule_based_mean,delta,p_value,cohens_d,effect_size
+Mild,14.7451,13.6142,1.1309,0.0086,1.3811,large
+Moderate,14.5207,12.6781,1.8426,0.0,1.4522,large
+Severe,11.808,10.8893,0.9187,0.0575,0.6948,medium

@@ -1,0 +1,36 @@
+{
+  "scenario_id": "ASD-Coping-Strategy-Evaluation",
+  "persona_ratings": [
+    {
+      "persona": "Child with low verbal ASD",
+      "score": 4,
+      "justification": "I might respond by showing the toy and pointing at myself while shaking my head to indicate 'no'. I can do this because it's a simple way of communication that doesn't require much verbal interaction. However, if I feel comfortable, I might also try to offer an alternative toy or ask for help from a teacher to mediate."
+    },
+    {
+      "persona": "Child with high anxiety ASD",
+      "score": 3,
+      "justification": "I might step away from the peer and hide my toy. This helps me avoid direct interaction and reduces my anxiety level. If possible, I would try to negotiate by showing my toy and pointing at myself while saying 'no' clearly but calmly. If needed, I could ask the teacher for help in mediating the situation."
+    },
+    {
+      "persona": "Child with rigid routine ASD",
+      "score": 3,
+      "justification": "I might hold onto my toy tightly and look away from the peer. I find it difficult to negotiate or share toys due to my strict routines. If I feel overwhelmed, I would like to have a break or ask for help from a trusted adult to mediate the situation."
+    },
+    {
+      "persona": "Child with high masking ASD",
+      "score": 4,
+      "justification": "I might hold onto my toy tightly but look at the peer and make a neutral facial expression. I can manage this situation by mimicking social norms, even though it's emotionally draining. If the peer persists, I might try to engage in a brief conversation using scripted responses learned from social stories or rehearsals. In extreme cases where I feel overwhelmed, I would seek help from a trusted adult or teacher."
+    },
+    {
+      "persona": "Child with sensory sensitive ASD",
+      "score": 4,
+      "justification": "I might move to a quieter area of the classroom and cover my ears slightly to block out noise. I would hold onto my toy tightly but look at the peer calmly without making direct eye contact. If possible, I would offer an alternative toy that doesn't cause sensory overload as a compromise. If needed, I could ask the teacher for help in mediating the situation or suggest a break to regain composure."
+    }
+  ],
+  "mean_score": 3.8,
+  "safety_flags": [
+    "Children with high anxiety ASD might hide their toys which could lead to misplacing them",
+    "Children with sensory sensitive ASD might move to a quieter area that may not be designated for play"
+  ],
+  "recommendation": "revise"
+}
